@@ -1,0 +1,76 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md}"
+        ],
+        "src": "landing",
+        "dest": "."
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "nav",
+        "dest": "."
+      },
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "src": "articles",
+        "dest": "documentdb/"
+      },
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "src": "reference",
+        "dest": "documentdb/query/"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "articles/media/**.{jpg,png,gif,svg}",
+          "reference/media/**.{jpg,png,gif,svg}"
+        ]
+      },
+      {
+        "files": [
+          "landing/media/**/*.{png,ico,svg}"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern",
+      "brand"
+    ],
+    "globalMetadata": {
+      "_appName": "DocumentDB",
+      "_appTitle": "DocumentDB",
+      "_appFooter": "Contributors and users can join the <a href=\"https://aka.ms/documentdb_discord\" target=\"_blank\">DocumentDB Discord channel in the Microsoft OSS server</a> for quick collaboration.",
+      "_appLogoPath": "landing/media/logo.svg",
+      "_appFaviconPath": "landing/media/favicon.ico",
+      "_disableNextArticle": true,
+      "_disableBreadcrumb": true,
+      "_disableAffix": false,
+      "_enableSearch": true,
+      "_enableNewTab": true,
+      "pdf": true
+    },
+    "fileMetadata": {
+      "_disableToc": {
+        "articles/*.md": false,
+        "reference/*.md": false
+      },
+      "_layout": {
+        "index.md": "landing"
+      }
+    }
+  }
+}

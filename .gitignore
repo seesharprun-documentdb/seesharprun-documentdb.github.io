@@ -1,0 +1,9 @@
+# DocFX site
+_site/
+
+# Node
+node_modules/
+
+# .NET
+bin/
+obj/

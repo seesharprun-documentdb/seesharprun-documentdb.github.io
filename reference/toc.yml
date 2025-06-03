@@ -1,0 +1,18 @@
+- name: Query language documentation
+  href: index.md
+- name: Commands
+  expanded: true
+  items:
+    - name: Aggregation
+      expanded: true
+      items:
+        - name: count
+          href: commands-aggregation-count.md
+- name: Operators
+  expanded: true
+  items:
+    - name: Query
+      expanded: true
+      items:
+        - name: regex
+          href: operators-query-regex.md

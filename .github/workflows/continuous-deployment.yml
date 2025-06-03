@@ -1,0 +1,51 @@
+name: Continuous Deployment
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+jobs:
+  build:
+    name: Build DocFX site
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: | 
+            9.x
+            8.x
+      - name: Install DocFX
+        run: |
+          dotnet new tool-manifest
+          dotnet tool install docfx
+      - name: Run DocFX build
+        run: |
+          dotnet tool run docfx docfx.local.json
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  publish:
+    name: Publish to GitHub Pages
+    needs: [
+      build
+    ]
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
