@@ -71,7 +71,7 @@
       "_disableContribution": {
         "articles/**/*.md": false,
         "reference/**/*.md": true
-      }
+      },
       "_layout": {
         "index.md": "landing"
       }
