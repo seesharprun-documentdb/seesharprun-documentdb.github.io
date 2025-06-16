@@ -1,6 +1,6 @@
 ---
 title: Documentation
-description: 
+description: Explore comprehensive DocumentDB documentation. Find guides, references, and tutorials to help you use, deploy, and query DocumentDB efficiently.
 ---
 
 # DocumentDB documentation

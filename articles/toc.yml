@@ -2,10 +2,19 @@
   href: index.md
 - name: Introduction
   href: introduction.md
+- name: FAQ
+  href: faq.md
 - name: Get started
   expanded: true
   items:
-    - name: Deploy using Docker
-      href: quickstart-docker.md
+    - name: Run locally using Docker
+      href: quickstart-docker-local.md
+    - name: Run prebuilt container image
+      href: quickstart-docker-prebuilt.md
+- name: Customize
+  expanded: true
+  items:
+    - name: Build from source
+      href: how-to-build-source.md
 - name: Query language
   href: /documentdb/query/

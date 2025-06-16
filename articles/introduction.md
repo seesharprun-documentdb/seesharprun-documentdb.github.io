@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: 
+description: Learn how DocumentDB powers vCore-based Azure Cosmos DB for MongoDB, enabling advanced NoSQL document operations, full-text search, and geospatial queries.
 ---
 
 # Introduction to DocumentDB

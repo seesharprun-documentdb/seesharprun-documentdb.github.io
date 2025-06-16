@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions
-description:
+description: Find answers to frequently asked questions about DocumentDB, including features, community involvement, troubleshooting, and best practices for using the database engine.
 ---
 
 # Frequently asked questions

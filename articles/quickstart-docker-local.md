@@ -1,58 +1,49 @@
 ---
 title: Quickstart - Run Using Docker Locally
-description:
+description: Discover how to run DocumentDB locally using Docker. Follow step-by-step instructions to deploy, build, and test DocumentDB on your own machine.
 ---
 
 # Quickstart: Run DocumentDB using Docker locally
 
-Want to try DocumentDB on your own machine? It's easy! You can get started in just a few steps using Docker.
+TODO
 
 ## Prerequisites
-- [Docker](https://docs.docker.com/engine/install/) installed on your computer
 
-## Option 1: Use the Prebuilt Docker Image
-1. **Pull the image:**
-   ```sh
-   docker pull ghcr.io/microsoft/documentdb/documentdb-oss:PG16-amd64-0.105.0
-   ```
-2. **Run the container:**
-   ```sh
-   docker run -p 127.0.0.1:9712:9712 -dt ghcr.io/microsoft/documentdb/documentdb-oss:PG16-amd64-0.105.0
-   ```
-   This will start DocumentDB and make it available on your computer at port 9712.
+- [Docker](https://docs.docker.com/engine/install/)
 
-## Option 2: Build the Image Yourself
-1. **Clone the repo:**
-   ```sh
-   git clone https://github.com/microsoft/documentdb.git
-   cd documentdb
-   ```
-2. **Build the Docker image:**
-   ```sh
-   docker build . -f .devcontainer/Dockerfile -t documentdb
-   ```
-3. **Run the container:**
-   ```sh
-   docker run -v $(pwd):/home/documentdb/code -it documentdb /bin/bash
-   ```
-4. **Build and install inside the container:**
-   ```sh
-   make
-   sudo make install
-   ```
+## Pull container image
 
-## Connecting to DocumentDB
-- To connect from your computer:
-  ```sh
-  psql -h localhost --port 9712 -d postgres -U documentdb
-  ```
-- Or, to connect from inside the container:
-  ```sh
-  psql -p 9712 -d postgres
-  ```
+TODO
 
-That's it! You're ready to start exploring DocumentDB.
+```bash
+docker pull ghcr.io/microsoft/documentdb/documentdb-local:latest
+```
 
----
+<https://github.com/microsoft/documentdb/pkgs/container/documentdb%2Fdocumentdb-local>
 
-Need help? [Join the Discord](https://aka.ms/documentdb_discord) or check out the [GitHub repo](https://github.com/microsoft/documentdb).
+## Run container
+
+TODO
+
+```bash
+docker run \
+    --detach \
+    --tty \
+    --publish 10260:10260 \
+    --env USERNAME=<username> \
+    --env PASSWORD=<password> \
+    ghcr.io/microsoft/documentdb/documentdb-local:latest
+```
+
+## Connect to container
+
+TODO
+
+```bash
+mongosh localhost:10260 \
+    --username <username> \
+    --password <password> \
+    --authenticationMechanism SCRAM-SHA-256 \
+    --tls \
+    --tlsAllowInvalidCertificates 
+```
