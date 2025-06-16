@@ -1,20 +1,26 @@
+---
+title: Introduction
+description: 
+---
+
 # Introduction to DocumentDB
 
-DocumentDB is an open-source document database engine that makes it easy to store, search, and manage data in a flexible way. Think of it as a friendly blend of a traditional database and a modern NoSQL system, all powered by PostgreSQL.
+DocumentDB is the engine powering vCore-based Azure Cosmos DB for MongoDB. It offers a native implementation of document-oriented NoSQL database, enabling seamless CRUD operations on BSON data types within a PostgreSQL framework. Beyond basic operations, DocumentDB empowers you to execute complex workloads, including full-text searches, geospatial queries, and vector embeddings on your dataset, delivering robust functionality and flexibility for diverse data management needs.
 
-## What makes DocumentDB special?
-- **Document-Oriented:** Store your data as documents (like JSON), making it easy to model real-world information.
-- **PostgreSQL Foundation:** Built on the trusted PostgreSQL database, so you get reliability and performance out of the box.
-- **Open Source:** Free to use, modify, and contribute to—no strings attached.
-- **Flexible Deployment:** Run it on your laptop, in the cloud, or on your own servers.
+[PostgreSQL](https://www.postgresql.org/about/) is a powerful, open source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads.
 
-## How does it work?
-DocumentDB adds support for BSON (a binary form of JSON) to PostgreSQL, letting you use powerful document features alongside all the tools and features you already know from Postgres. You can create collections, run queries, and even do advanced things like full-text search and aggregations.
+## Components
 
-Whether you're building a new app or just exploring, DocumentDB is designed to be approachable and fun to use.
+The DocumentDB project comprises of two primary components, which work together to support document operations.
 
-![Illustration of a database with a check mark symbol in the center to indicate production readiness.](media/introduction/database.svg)
+- `pg_documentdb_core` : PostgreSQL extension introducing BSON datatype support and operations for native Postgres.
 
-## TODO
+- `pg_documentdb` : The public API surface for DocumentDB providing CRUD functionality on documents in the store.
 
-TODO
+## Related content
+
+- [Get started by deploying to Docker locally](quickstart-docker-local.md)
+
+- [Get started by running the pre-built Docker container image](quickstart-docker-prebuilt.md)
+
+- [Review the frequently asked questions (FAQ)](faq.md)

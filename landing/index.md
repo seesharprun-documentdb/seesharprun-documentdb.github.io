@@ -1,4 +1,4 @@
-# Welcome to DocumentDB
+# DocumentDB
 
 DocumentDB is an open-source document database engine, designed to make working with data simple, flexible, and powerful. Built on top of PostgreSQL, DocumentDB brings the best of both worlds: the reliability of a proven relational database and the flexibility of a document-oriented NoSQL system.
 
